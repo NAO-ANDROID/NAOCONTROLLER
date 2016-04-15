@@ -7,5 +7,15 @@ package com.example.naocontroller;
  */
 public class MessagePack {
 	
+	public String moveToward(){
+		String instruct ="";
+		return instruct;
+	}
+	
+	public String moveRight(){
+		String instruct = "";
+		return instruct;
+	}
+	
 
 }

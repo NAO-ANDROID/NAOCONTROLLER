@@ -23,11 +23,15 @@
             </intent-filter>
         </activity>
         <activity
-            android:name="com.example.naocontroller.MainActivity"
+            android:name="com.example.naocontroller.Connect"
             android:label="@string/app_name" >
         </activity>
         <activity
             android:name="com.example.naocontroller.ControllerMenu"
+            android:label="@string/app_name" >
+        </activity>
+        <activity
+            android:name="com.example.naocontroller.ControllerMove"
             android:label="@string/app_name" >
         </activity>
     </application>

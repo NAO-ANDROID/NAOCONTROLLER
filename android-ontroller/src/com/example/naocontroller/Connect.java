@@ -1,5 +1,6 @@
 package com.example.naocontroller;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
 import android.app.Activity;
@@ -11,7 +12,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
-public class MainActivity extends Activity {
+public class Connect extends Activity {
 	private Button singleButton;
 	private Button multiButton;
 	private Button connectSureButton;
@@ -46,14 +47,16 @@ public class MainActivity extends Activity {
 //    	Intent mainIntent = new Intent(StartView.this,MainActivity.class);
 //		StartView.this.startActivity(mainIntent);
 //		StartView.this.finish();
-    	Intent turnIntent = new Intent(MainActivity.this,ControllerMenu.class);
-    	Bundle clientInfo = new Bundle();
-    	clientInfo.putString("ip", ipText.getText().toString());
-    	clientInfo.putString("port", hostText.getText().toString());
-    	turnIntent.putExtras(clientInfo);
+    	Intent turnIntent = new Intent(Connect.this,ControllerMenu.class);
+    	Bundle bundle = new Bundle();
+    	Client client = new Client(ipText.getText().toString(),hostText.getText().toString());
+    	ArrayList<Client> clientList = new ArrayList<Client>();
+    	clientList.add(client);
+    	bundle.putSerializable("clientList", (Serializable)clientList);
+    	turnIntent.putExtras(bundle);
     	
-    	MainActivity.this.startActivity(turnIntent);
-    	MainActivity.this.finish();
+    	Connect.this.startActivity(turnIntent);
+    	Connect.this.finish();
     	
     }
     

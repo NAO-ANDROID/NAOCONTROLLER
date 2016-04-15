@@ -26,7 +26,7 @@ public class StartView extends Activity{
 		setContentView(R.layout.startview);
 		new Handler().postDelayed(new Runnable(){
 			public void run(){
-				Intent mainIntent = new Intent(StartView.this,MainActivity.class);
+				Intent mainIntent = new Intent(StartView.this,Connect.class);
 				StartView.this.startActivity(mainIntent);
 				StartView.this.finish();
 		}
