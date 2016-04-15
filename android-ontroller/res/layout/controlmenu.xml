@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <TextView
+        android:id="@+id/textView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="14dp"
+        android:text="TextView" 
+        />
+
+    <Button
+        android:id="@+id/customController"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/simpleTalkController"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="28dp"
+        android:background="@drawable/button"
+        android:text="自定义命令控制"
+        android:textColor="#FFFFFF"
+        android:textSize="18sp" 
+        android:onClick="clickCustom"/>
+
+    <Button
+        android:id="@+id/simpleMoveController"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/simpleYuYinController"
+        android:layout_below="@+id/textView1"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/button"
+        android:text="简单活动控制"
+        android:textColor="#FFFFFF"
+        android:textSize="18sp" 
+        android:onClick="clickMove"/>
+
+    <Button
+        android:id="@+id/simpleYuYinController"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/simpleTalkController"
+        android:layout_below="@+id/simpleMoveController"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/button"
+        android:text="简单语音控制"
+        android:textColor="#FFFFFF"
+        android:textSize="18sp"
+        android:onClick="clickYuyin" />
+
+    <Button
+        android:id="@+id/simpleTalkController"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:background="@drawable/button"
+        android:text="简单语言控制"
+        android:textColor="#FFFFFF"
+        android:textSize="18sp" 
+        android:onClick="clickTalk"/>
+
+</RelativeLayout>
