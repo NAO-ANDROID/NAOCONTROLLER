@@ -8,8 +8,9 @@ import java.net.Socket;
 public class Server {
 	public static void main(String[] args){
 		ServerSocket server = null;
+		
 		try{
-			server = new ServerSocket(4700);
+			server = new ServerSocket(5900);
 			while(true){
 			Socket socket = server.accept();
 			BufferedReader is = new BufferedReader(new InputStreamReader(socket.getInputStream()));

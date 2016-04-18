@@ -5,14 +5,14 @@ import java.util.ArrayList;
 import android.app.Activity;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Button;
+import android.widget.ImageButton;
 
 public class ControllerMove extends Activity{
-	private Button moveToward;
-	private Button moveLeft;
-	private Button moveRight;
-	private Button moveBack;
-	private Button stop;
+	private ImageButton moveToward;
+	private ImageButton moveLeft;
+	private ImageButton moveRight;
+	private ImageButton moveBack;
+	private ImageButton stop;
 	private ArrayList<Client> clientList;
 	private MessagePack messagePacker = new MessagePack();
 	private MessageSender messageSender = new MessageSender();
@@ -26,26 +26,26 @@ public class ControllerMove extends Activity{
 		clientList = (ArrayList<Client>)clientInfo.getSerializable("clientList");
 		
 		//get view
-		moveToward = (Button)findViewById(R.id.movetoward);
-		moveLeft = (Button)findViewById(R.id.moveleft);
-		moveRight = (Button)findViewById(R.id.moverigth);
-		moveBack = (Button)findViewById(R.id.moveback);
-		stop = (Button)findViewById(R.id.stopButton);
+		moveToward = (ImageButton)findViewById(R.id.movetoward);
+		moveLeft = (ImageButton)findViewById(R.id.moveleft);
+		moveRight = (ImageButton)findViewById(R.id.moverigth);
+		moveBack = (ImageButton)findViewById(R.id.moveback);
+		stop = (ImageButton)findViewById(R.id.stopButton);
 	}
 	
 	public void clickMoveToward(View view){
-		
+		messageSender.sendMessage(clientList, messagePacker.moveToward());
 	}
 	public void clickMoveLeft(View view){
-		
+		messageSender.sendMessage(clientList, messagePacker.moveLeft());
 	}
 	public void clickMoveRight(View view){
-		
+		messageSender.sendMessage(clientList, messagePacker.moveRight());
 	}
 	public void clickMoveBack(View view){
-		
+		messageSender.sendMessage(clientList, messagePacker.moveBack());
 	}
 	public void clickStop(View view){
-		
+		messageSender.sendMessage(clientList, messagePacker.stop());
 	}
 }

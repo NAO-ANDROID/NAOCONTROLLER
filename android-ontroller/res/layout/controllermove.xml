@@ -1,39 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent" >
-     <ImageButton
-        android:id="@+id/movetoward"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentLeft="true"
-        android:layout_marginBottom="120dp"
-        android:layout_marginLeft="118dp"
-        android:src="@android:drawable/btn_star" 
-        android:onClick="clickMoveToward"/>
-
-       <ImageButton
-           android:id="@+id/moveleft"
-           android:layout_width="wrap_content"
-           android:layout_height="wrap_content"
-           android:layout_alignParentBottom="true"
-           android:layout_alignParentLeft="true"
-           android:layout_marginBottom="74dp"
-           android:layout_marginLeft="65dp"
-           android:src="@android:drawable/btn_star" 
-           android:onClick="clickMoveLeft"/>
-
-       <ImageButton
-           android:id="@+id/moverigth"
-           android:layout_width="wrap_content"
-           android:layout_height="wrap_content"
-           android:layout_alignParentBottom="true"
-           android:layout_alignParentRight="true"
-           android:layout_marginBottom="71dp"
-           android:layout_marginRight="94dp"
-           android:src="@android:drawable/btn_star"
-           android:onClick="clickMoveRight" />
+    android:layout_height="match_parent" 
+    android:background="@drawable/bg3">
 
        <ImageButton
            android:id="@+id/moveback"
@@ -42,17 +11,60 @@
            android:layout_alignLeft="@+id/movetoward"
            android:layout_alignParentBottom="true"
            android:layout_marginBottom="31dp"
-           android:src="@android:drawable/btn_star" 
+           android:src="@drawable/back" 
            android:onClick="clickMoveBack"/>
 
        <ImageButton
            android:id="@+id/stopButton"
            android:layout_width="wrap_content"
            android:layout_height="wrap_content"
-           android:layout_alignLeft="@+id/movetoward"
            android:layout_alignParentTop="true"
-           android:layout_marginTop="29dp"
-           android:src="@android:drawable/btn_star" 
-           android:onClick="clickStop"/>
+           android:layout_centerHorizontal="true"
+           android:layout_marginTop="24dp"
+           android:onClick="clickStop"
+           android:src="@drawable/stop" />
+
+       <ImageButton
+           android:id="@+id/moverigth"
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:layout_alignTop="@+id/moveleft"
+           android:layout_toRightOf="@+id/stopButton"
+           android:onClick="clickMoveRight"
+           android:src="@drawable/right" />
+
+       <ImageButton
+           android:id="@+id/movetoward"
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:layout_above="@+id/moverigth"
+           android:layout_toLeftOf="@+id/moverigth"
+           android:onClick="clickMoveToward"
+           android:src="@drawable/toward" />
+
+       <ImageButton
+           android:id="@+id/moveleft"
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:layout_above="@+id/moveback"
+           android:layout_toLeftOf="@+id/moveback"
+           android:onClick="clickMoveLeft"
+           android:src="@drawable/left" />
+
+       <ImageButton
+           android:id="@+id/imageButton1"
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:layout_below="@+id/stopButton"
+           android:layout_toLeftOf="@+id/stopButton"
+           android:src="@drawable/lefthand" />
+
+       <ImageButton
+           android:id="@+id/imageButton2"
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:layout_alignLeft="@+id/moverigth"
+           android:layout_alignTop="@+id/imageButton1"
+           android:src="@drawable/righthand" />
 
 </RelativeLayout>

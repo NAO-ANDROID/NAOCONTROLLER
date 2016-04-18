@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent" >
+    android:layout_height="match_parent"
+    android:background="@drawable/bg3" >
 
     <TextView
         android:id="@+id/textView1"
@@ -57,12 +58,13 @@
         android:id="@+id/simpleTalkController"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_below="@+id/simpleYuYinController"
         android:layout_centerHorizontal="true"
-        android:layout_centerVertical="true"
+        android:layout_marginTop="18dp"
         android:background="@drawable/button"
+        android:onClick="clickTalk"
         android:text="简单语言控制"
         android:textColor="#FFFFFF"
-        android:textSize="18sp" 
-        android:onClick="clickTalk"/>
+        android:textSize="18sp" />
 
 </RelativeLayout>

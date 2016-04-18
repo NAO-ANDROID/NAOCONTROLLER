@@ -8,6 +8,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
 
 public class ControllerMenu extends Activity{
 	private Button simpleMoveButton;
@@ -15,6 +16,7 @@ public class ControllerMenu extends Activity{
 	private Button simpleYuyinButton;
 	private Button custom;
 	private ArrayList<Client> clientList;
+	private TextView propt;
 	@Override
 	public void onCreate(Bundle savedInstanceState){
 		super.onCreate(savedInstanceState);
@@ -28,6 +30,8 @@ public class ControllerMenu extends Activity{
 		simpleTalkButton = (Button)findViewById(R.id.simpleTalkController);
 		simpleYuyinButton = (Button)findViewById(R.id.simpleYuYinController);
 		custom = (Button)findViewById(R.id.customController);
+		propt = (TextView)findViewById(R.id.textView1);
+		propt.setText(clientList.get(0).host);
 		
 	}
 	
@@ -43,6 +47,9 @@ public class ControllerMenu extends Activity{
 		
 	}
 	public void clickYuyin(View view){
+		Intent intent = new Intent(ControllerMenu.this,ControllerVoice.class);
+		ControllerMenu.this.startActivity(intent);
+		ControllerMenu.this.finish();
 		
 	}
 	public void clickCustom(View view){

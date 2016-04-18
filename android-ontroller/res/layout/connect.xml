@@ -2,6 +2,7 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/bg3"
      >
 
     <TextView
@@ -12,16 +13,6 @@
         android:layout_alignBottom="@+id/idText"
         android:layout_alignParentLeft="true"
         android:text="IP：   " />
-
-    <Button
-        android:id="@+id/connectSure"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignTop="@+id/multi"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="48dp"
-        android:onClick="clickConnectSureButton"
-        android:text="连接" />
 
     <Button
         android:id="@+id/single"
@@ -73,5 +64,18 @@
         android:layout_alignParentTop="true"
         android:layout_marginTop="37dp"
         android:ems="10" />
+
+    <Button
+        android:id="@+id/connectSure"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignRight="@+id/multi"
+        android:layout_below="@+id/multi"
+        android:layout_marginTop="48dp"
+        android:background="@drawable/button"
+        android:onClick="clickConnectSureButton"
+        android:text="连接"
+        android:textColor="#FFFFFF"
+        android:textSize="18sp" />
 
 </RelativeLayout>

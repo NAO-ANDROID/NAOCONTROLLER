@@ -88,11 +88,11 @@ public class Connect extends Activity {
     	ipText.setVisibility(View.INVISIBLE);
     	hostText.setVisibility(View.INVISIBLE);
     }
-    public void getSingleClient(){
-    	String ip = ipText.getText().toString();
-    	String host = hostText.getText().toString();
-    	clientList.add(new Client(ip,host));
-    }
+//    public void clickConnectSureButton(){
+//    	String ip = ipText.getText().toString();
+//    	String host = hostText.getText().toString();
+//    	clientList.add(new Client(ip,host));
+//    }
 
 
     @Override
