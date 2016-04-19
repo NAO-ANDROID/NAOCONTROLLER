@@ -7,15 +7,15 @@ public class ControllerTalk {
 	
 	public void speak(String request,final ArrayList<Client> clientList){
 		if(request.equals("自我介绍")){
-			final String prepareInstruct = "ALTextToSpeech say -p 'Chinese';";			
-			String instruct = "大家好，我是闹机器人，这是用来测试安卓控制器的程序，如果出现小的" +
-					"问题，请耐心等待。";
+			//final String prepareInstruct = "ALTextToSpeech say -p 'Chinese';";			
+			String instruct = "Hello ,My name is NAO ,this is a test program. ";
+					
 			final String mainInstruct  = "ALTextToSpeech say -p '"+instruct+"';";
 			new Thread(new Runnable(){
 				@Override
 				public void run() {
 					// TODO Auto-generated method stub					
-					messageSender.sendMessage(clientList,prepareInstruct);
+				//	messageSender.sendMessage(clientList,prepareInstruct);
 					messageSender.sendMessage(clientList, mainInstruct);
 					
 				}
@@ -24,7 +24,15 @@ public class ControllerTalk {
 		}
 		
 		if(request.equals("天气预报")){
-			
+			final String instruct = "Let's take a look at the weather for the next 24 hours." +
+					"It would be cloudy at the time with the temperature from fifteen to twenty-five.A strong wind would reach here,which could cause much rain.";
+			final String maininstruct = "ALTextToSpeech say -p '" + instruct + "';" ;
+			new Thread(new Runnable(){
+				@Override
+				public void run(){
+					messageSender.sendMessage(clientList, maininstruct);
+				}
+			}).start();
 		}
 	}
 

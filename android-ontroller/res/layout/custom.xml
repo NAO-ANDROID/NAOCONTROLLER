@@ -72,6 +72,6 @@
         android:text="发送"
         android:textColor="#FFFFFF"
         android:textSize="18sp" 
-        android:onClick="clickcSend"/>
+        android:onClick="clickSend"/>
 
 </RelativeLayout>
