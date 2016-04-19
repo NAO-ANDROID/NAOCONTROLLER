@@ -38,6 +38,10 @@
             android:name="com.example.naocontroller.ControllerVoice"
             android:label="@string/app_name" >
         </activity>
+        <activity
+            android:name="com.example.naocontroller.ControllerCustom"
+            android:label="@string/app_name" >
+        </activity>
     </application>
     <!-- 讯飞语音权限开始 -->
 	<uses-permission android:name="android.permission.INTERNET" />

@@ -13,6 +13,7 @@ import android.widget.EditText;
 import android.widget.TextView;
 
 public class Connect extends Activity {
+	private Button next;
 	private Button singleButton;
 	private Button multiButton;
 	private Button connectSureButton;
@@ -35,6 +36,7 @@ public class Connect extends Activity {
         hostProp = (TextView)findViewById(R.id.hostProp);
         ipText = (EditText)findViewById(R.id.idText);
         hostText = (EditText)findViewById(R.id.hostText);
+        next = (Button)findViewById(R.id.next);
         
         initView();
         
@@ -50,7 +52,6 @@ public class Connect extends Activity {
     	Intent turnIntent = new Intent(Connect.this,ControllerMenu.class);
     	Bundle bundle = new Bundle();
     	Client client = new Client(ipText.getText().toString(),hostText.getText().toString());
-    	ArrayList<Client> clientList = new ArrayList<Client>();
     	clientList.add(client);
     	bundle.putSerializable("clientList", (Serializable)clientList);
     	turnIntent.putExtras(bundle);
@@ -59,15 +60,28 @@ public class Connect extends Activity {
     	Connect.this.finish();
     	
     }
+    public void clickNext(View view){
+    	String ip = ipText.getText().toString();
+    	String port = hostText.getText().toString();
+    	Client client = new Client(ip,port);
+    	clientList.add(client);
+    	ipText.setText("");
+    	hostText.setText("");
+    }
     
     public void clickSingleButton(View view){
-    	viewChange();
+    	viewChange(false);
     }
     public void clickMultiButton(View view){
-    	viewChange();
+    	viewChange(true);
     }
     //event ending
-    public void viewChange(){
+    public void viewChange(boolean position){
+    	if(position){
+    		next.setVisibility(View.VISIBLE);
+    	}else{
+    		next.setVisibility(View.INVISIBLE);
+    	}
     	singleButton.setVisibility(View.INVISIBLE);
 //    	singleButton.setHeight(0);
 //    	singleButton.setWidth(0);
@@ -87,6 +101,7 @@ public class Connect extends Activity {
     	hostProp.setVisibility(View.INVISIBLE);
     	ipText.setVisibility(View.INVISIBLE);
     	hostText.setVisibility(View.INVISIBLE);
+    	next.setVisibility(View.INVISIBLE);
     }
 //    public void clickConnectSureButton(){
 //    	String ip = ipText.getText().toString();

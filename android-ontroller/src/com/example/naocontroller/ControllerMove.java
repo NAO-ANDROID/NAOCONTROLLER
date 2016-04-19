@@ -8,6 +8,8 @@ import android.view.View;
 import android.widget.ImageButton;
 
 public class ControllerMove extends Activity{
+	private ImageButton leftHand;
+	private ImageButton rightHand;
 	private ImageButton moveToward;
 	private ImageButton moveLeft;
 	private ImageButton moveRight;
@@ -32,20 +34,96 @@ public class ControllerMove extends Activity{
 		moveBack = (ImageButton)findViewById(R.id.moveback);
 		stop = (ImageButton)findViewById(R.id.stopButton);
 	}
-	
+	public void clickRightHand(View view){
+		new Thread(new Runnable(){
+
+			@Override
+			public void run() {
+				// TODO Auto-generated method stub
+				messageSender.sendMessage(clientList, messagePacker.stretchRightHand());
+				try{
+				Thread.sleep(3000);
+				}catch(Exception e){
+					e.printStackTrace();
+				}
+				messageSender.sendMessage(clientList, messagePacker.putDownRightHand());
+			}
+			
+		}).start();
+	}
+	public void clickLeftHand(View view){
+		new Thread(new Runnable(){
+
+			@Override
+			public void run() {
+				// TODO Auto-generated method stub
+				messageSender.sendMessage(clientList, messagePacker.stretchLeftHand());
+				try{
+				Thread.sleep(3000);
+				}catch(Exception e){
+					e.printStackTrace();
+				}
+				messageSender.sendMessage(clientList, messagePacker.putDownLeftHand());
+			}
+			
+		}).start();
+	}
 	public void clickMoveToward(View view){
-		messageSender.sendMessage(clientList, messagePacker.moveToward());
+		new Thread(new Runnable(){
+			@Override
+			public void run() {
+				// TODO Auto-generated method stub
+				messageSender.sendMessage(clientList, messagePacker.moveToward());
+			}			
+		}).start();
+		
 	}
 	public void clickMoveLeft(View view){
-		messageSender.sendMessage(clientList, messagePacker.moveLeft());
+		new Thread(new Runnable(){
+
+			@Override
+			public void run() {
+				// TODO Auto-generated method stub
+				messageSender.sendMessage(clientList, messagePacker.moveLeft());
+			}
+			
+		}).start();
+		
 	}
 	public void clickMoveRight(View view){
-		messageSender.sendMessage(clientList, messagePacker.moveRight());
+		new Thread(new Runnable(){
+
+			@Override
+			public void run() {
+				// TODO Auto-generated method stub
+				messageSender.sendMessage(clientList, messagePacker.moveRight());
+			}
+			
+		}).start();
+		
 	}
 	public void clickMoveBack(View view){
-		messageSender.sendMessage(clientList, messagePacker.moveBack());
+		new Thread(new Runnable(){
+
+			@Override
+			public void run() {
+				// TODO Auto-generated method stub
+				messageSender.sendMessage(clientList, messagePacker.moveBack());
+			}
+			
+		}).start();
+		
 	}
 	public void clickStop(View view){
-		messageSender.sendMessage(clientList, messagePacker.stop());
+		new Thread(new Runnable(){
+
+			@Override
+			public void run() {
+				// TODO Auto-generated method stub
+				messageSender.sendMessage(clientList, messagePacker.stop());
+			}
+			
+		}).start();
+		
 	}
 }

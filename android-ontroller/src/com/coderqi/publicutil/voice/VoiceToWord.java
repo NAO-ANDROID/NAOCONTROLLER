@@ -1,16 +1,16 @@
 package com.coderqi.publicutil.voice;
 
-import android.app.Activity;
+import java.util.ArrayList;
 
+
+import android.app.Activity;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.text.TextUtils;
-import android.widget.Button;
 import android.widget.Toast;
-import com.iflytek.cloud.speech.DataDownloader;
-import com.iflytek.cloud.speech.DataUploader;
-import com.iflytek.cloud.speech.RecognizerResult;
+
+import com.example.naocontroller.Client;
 import com.iflytek.cloud.speech.SpeechConstant;
 import com.iflytek.cloud.speech.SpeechError;
 import com.iflytek.cloud.speech.SpeechListener;
@@ -20,6 +20,7 @@ import com.iflytek.cloud.ui.RecognizerDialog;
 import com.iflytek.cloud.ui.RecognizerDialogListener;
 
 public class VoiceToWord extends Activity{
+	private ArrayList<Client> clientList;
 	private Context context;
 	private Toast mToast;
 	//识别窗口
@@ -30,7 +31,8 @@ public class VoiceToWord extends Activity{
 	private SharedPreferences mSharedPreferences;
 	private RecognizerDialogListener recognizerDialogListener = null;
 	
-	public VoiceToWord(Context context,String APP_ID) {
+	public VoiceToWord(Context context,String APP_ID,ArrayList<Client> clietnList) {
+		this.clientList = clientList;
 		// TODO Auto-generated constructor stub
 		//用户登录
 		this.context = context;
@@ -83,6 +85,7 @@ public class VoiceToWord extends Activity{
 	{
 		if(!TextUtils.isEmpty(str))
 		{
+			 
 			mToast.setText(str);
 			mToast.show();
 		}
@@ -132,7 +135,7 @@ public class VoiceToWord extends Activity{
 		/**
 		 * 识别回调监听器
 		 */
-		recognizerDialogListener=new MyRecognizerDialogLister(context);
+		recognizerDialogListener=new MyRecognizerDialogLister(context,clientList);
 	}
 	
 	/**

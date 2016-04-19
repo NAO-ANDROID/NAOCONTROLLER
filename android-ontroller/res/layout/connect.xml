@@ -35,7 +35,7 @@
         android:layout_below="@+id/single"
         android:layout_marginTop="24dp"
         android:background="@drawable/button"
-        android:onClick="clickMutiButton"
+        android:onClick="clickMultiButton"
         android:text="连接多个NAO机器人"
         android:textColor="#FFFFFF"
         android:textSize="18sp" />
@@ -77,5 +77,18 @@
         android:text="连接"
         android:textColor="#FFFFFF"
         android:textSize="18sp" />
+
+    <Button
+        android:id="@+id/next"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/connectSure"
+        android:layout_alignBottom="@+id/connectSure"
+        android:layout_alignLeft="@+id/multi"
+        android:background="@drawable/button"
+        android:textColor="#FFFFFF"
+        android:textSize="18sp"
+        android:text="下一个" 
+        android:onClick="clickNext"/>
 
 </RelativeLayout>

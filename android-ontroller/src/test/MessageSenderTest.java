@@ -10,7 +10,7 @@ public class MessageSenderTest {
 	public static void main(String[] args){
 		
 		ArrayList<Client> clientList  = new ArrayList<Client>();
-		Client c = new Client("192.168.23.1","5900");
+		Client c = new Client("172.26.62.79","7900");
 		clientList.add(c);
 		
 		sender.sendMessage(clientList,"hello");

@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" 
+    android:background="@drawable/bg3">
+
+    <EditText
+        android:id="@+id/paracontent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/proxycontent"
+        android:layout_centerVertical="true"
+        android:ems="10" >
+
+        <requestFocus />
+    </EditText>
+
+    <EditText
+        android:id="@+id/motioncontent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/motion"
+        android:layout_alignBottom="@+id/motion"
+        android:layout_alignParentRight="true"
+        android:ems="10" />
+
+    <EditText
+        android:id="@+id/proxycontent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/proxy"
+        android:layout_alignBottom="@+id/proxy"
+        android:layout_alignParentRight="true"
+        android:ems="10" />
+
+    <TextView
+        android:id="@+id/para"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/paracontent"
+        android:layout_alignBottom="@+id/paracontent"
+        android:layout_alignLeft="@+id/proxy"
+        android:text="参数设置" />
+
+    <TextView
+        android:id="@+id/proxy"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/motioncontent"
+        android:layout_marginLeft="21dp"
+        android:layout_marginTop="47dp"
+        android:text="调用模块" />
+
+    <TextView
+        android:id="@+id/motion"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/proxy"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="45dp"
+        android:text="调用动作" />
+
+    <Button
+        android:id="@+id/send"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/paracontent"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="71dp"
+        android:background="@drawable/button"
+        android:text="发送"
+        android:textColor="#FFFFFF"
+        android:textSize="18sp" 
+        android:onClick="clickcSend"/>
+
+</RelativeLayout>

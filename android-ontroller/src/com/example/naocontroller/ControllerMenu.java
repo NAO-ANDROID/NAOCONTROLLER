@@ -27,7 +27,7 @@ public class ControllerMenu extends Activity{
 		
 		//get view
 		simpleMoveButton = (Button)findViewById(R.id.simpleMoveController);
-		simpleTalkButton = (Button)findViewById(R.id.simpleTalkController);
+		//simpleTalkButton = (Button)findViewById(R.id.simpleTalkController);
 		simpleYuyinButton = (Button)findViewById(R.id.simpleYuYinController);
 		custom = (Button)findViewById(R.id.customController);
 		propt = (TextView)findViewById(R.id.textView1);
@@ -48,11 +48,20 @@ public class ControllerMenu extends Activity{
 	}
 	public void clickYuyin(View view){
 		Intent intent = new Intent(ControllerMenu.this,ControllerVoice.class);
+		Bundle bundle = new Bundle();
+		bundle.putSerializable("clientList", (Serializable)clientList);
+		intent.putExtras(bundle);
 		ControllerMenu.this.startActivity(intent);
 		ControllerMenu.this.finish();
 		
 	}
 	public void clickCustom(View view){
+		Intent intent = new Intent(ControllerMenu.this,ControllerCustom.class);
+		Bundle bundle = new Bundle();
+		bundle.putSerializable("clientList", (Serializable)clientList);
+		intent.putExtras(bundle);
+		ControllerMenu.this.startActivity(intent);
+		ControllerMenu.this.finish();
 		
 	}
 }
