@@ -33,6 +33,7 @@ public class MyRecognizerDialogLister implements RecognizerDialogListener{
 	public void onResult(RecognizerResult results, boolean isLast) {
 		// TODO Auto-generated method stub
 		String text = JsonParser.parseIatResult(results.getResultString());
+		
 		talker.speak(text, clientList);
 		System.out.println(text);
 		Toast.makeText(context, text, Toast.LENGTH_LONG).show();

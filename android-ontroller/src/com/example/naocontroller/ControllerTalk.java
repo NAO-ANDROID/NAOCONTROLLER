@@ -3,21 +3,22 @@ package com.example.naocontroller;
 import java.util.ArrayList;
 
 public class ControllerTalk {
-	private MessageSender messageSender = new MessageSender();
-	
+	private MessageSender messageSender = new MessageSender();	
 	public void speak(String request,final ArrayList<Client> clientList){
+//		final ArrayList<Client> testList = new ArrayList<Client>();
+//		testList.add(new Client("192.168.1.107","7900"));
+		
+		
 		if(request.equals("×ÔÎÒ½éÉÜ")){
 			//final String prepareInstruct = "ALTextToSpeech say -p 'Chinese';";			
-			String instruct = "Hello ,My name is NAO ,this is a test program. ";
-					
+			String instruct = "Hello, My name is NAO, this is a test program. ";					
 			final String mainInstruct  = "ALTextToSpeech say -p '"+instruct+"';";
 			new Thread(new Runnable(){
 				@Override
 				public void run() {
 					// TODO Auto-generated method stub					
-				//	messageSender.sendMessage(clientList,prepareInstruct);
-					messageSender.sendMessage(clientList, mainInstruct);
-					
+				    //messageSender.sendMessage(clientList,prepareInstruct);
+					messageSender.sendMessage(clientList, mainInstruct);					
 				}
 				
 			}).start();

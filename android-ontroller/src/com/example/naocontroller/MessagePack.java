@@ -48,7 +48,7 @@ public class MessagePack {
 	}
 	
 	public String putDownLeftHand(){
-		String instruct ="ALMotion angleInterpolation -p ['LShoulderRoll'] [0] [1.0] True"; 
+		String instruct ="ALMotion angleInterpolation -p ['LShoulderRoll'] [0] [1.0] True;"; 
 		return instruct;
 	}
 

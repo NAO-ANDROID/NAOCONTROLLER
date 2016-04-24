@@ -20,7 +20,7 @@ import com.iflytek.cloud.ui.RecognizerDialog;
 import com.iflytek.cloud.ui.RecognizerDialogListener;
 
 public class VoiceToWord extends Activity{
-	private ArrayList<Client> clientList;
+	public ArrayList<Client> clientList;
 	private Context context;
 	private Toast mToast;
 	//识别窗口
@@ -47,7 +47,7 @@ public class VoiceToWord extends Activity{
 		mSharedPreferences = context.getSharedPreferences(context.getPackageName(),MODE_PRIVATE);
 	}
 	
-	public VoiceToWord(Context context,String APP_ID,RecognizerDialogListener recognizerDialogListener)
+	public VoiceToWord(Context context,String APP_ID,RecognizerDialogListener recognizerDialogListener,ArrayList<Client> clietnList)
 	{
 		this.context = context;
 		SpeechUser.getUser().login(context, null, null
@@ -134,7 +134,9 @@ public class VoiceToWord extends Activity{
 	{
 		/**
 		 * 识别回调监听器
+		 * 
 		 */
+		
 		recognizerDialogListener=new MyRecognizerDialogLister(context,clientList);
 	}
 	

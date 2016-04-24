@@ -40,7 +40,9 @@ public class ControllerVoice extends Activity implements OnClickListener{
 			switch (v.getId()) {
 			//ÌýÐ´°´Å¥
 			case R.id.send:
+				System.out.print(clientList.get(0).ip);
 				VoiceToWord voice = new VoiceToWord(ControllerVoice.this,"534e3fe2",clientList);
+				voice.clientList = clientList;
 				voice.GetWordFromVoice();
 				break;
 			}
